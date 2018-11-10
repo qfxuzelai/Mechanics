@@ -1,0 +1,425 @@
+\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[UTF8,twocolumn]{ctexart}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provides euro and other symbols
+\else % if luatex or xelatex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\usepackage{hyperref}
+\hypersetup{
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+
+\date{}
+
+\begin{document}
+
+\hypertarget{ux7b2cux4e09ux7ae0-ux91cfux5b50ux529bux5b66ux7684ux77e9ux9635ux5f62ux5f0fux4e0eux8868ux8c61ux7406ux8bba}{%
+\section{第三章{ }量子力学的矩阵形式与表象理论}\label{ux7b2cux4e09ux7ae0-ux91cfux5b50ux529bux5b66ux7684ux77e9ux9635ux5f62ux5f0fux4e0eux8868ux8c61ux7406ux8bba}}
+
+\hypertarget{ux4e00ux6001ux548cux529bux5b66ux91cfux7684ux8868ux8c61}{%
+\subsection{一、态和力学量的表象}\label{ux4e00ux6001ux548cux529bux5b66ux91cfux7684ux8868ux8c61}}
+
+\hypertarget{ux6001ux77e2ux91cf}{%
+\subsubsection{1 态矢量}\label{ux6001ux77e2ux91cf}}
+
+\hypertarget{ux6001ux7684ux8868ux8c61}{%
+\paragraph{ 1.1 态的表象}\label{ux6001ux7684ux8868ux8c61}}
+
+\begin{itemize}
+\tightlist
+\item
+  坐标表象：
+  \[\Psi(\vec{r},t)=\int c(\vec{p},t)\varphi_p(x)dp\]
+  其中
+  \[\varphi_p(x)=\frac{1}{(2\pi\hbar)^{3/2}}e^{\frac{i}{\hbar}\vec{p}\cdot\vec{r}}\]
+\item
+  动量表象：
+  \[c(\vec{p},t)=\int\Psi(\vec{r},t)\varphi_p^*(x)dp\]
+  其中
+  \[\varphi_p^*(x)=\frac{1}{(2\pi\hbar)^{3/2}}e^{-\frac{i}{\hbar}\vec{p}\cdot\vec{r}}\]
+\end{itemize}
+
+\hypertarget{qux8868ux8c61}{%
+\paragraph{ 1.2 Q表象}\label{qux8868ux8c61}}
+
+\begin{itemize}
+\tightlist
+\item
+  态矢量：设力学量Q的本征函数系为\(\{u_n(x)\}\)，若\(\Psi(x,t)=\sum_na_n(t)u_n(x)\)，则在Q表象中的态矢量为
+  \[\Psi(t)=[a_1(t),a_2(t),\cdots,a_n(t),\cdots]^T\]
+\item
+  分量：
+  \[a_n(t)=(u_n(x),\Psi(x_t))=\int u_n^*(x)\Psi(x,t)dx\]
+\item
+  归一化条件：\(\Psi^H(t)\Psi(t)=\sum_n|a_n(t)|^2=1\)
+\item
+  注：\(|a_n|^2\)表示对\(\Psi\)态测量力学量Q所得结果为\(q_n\)的概率
+\end{itemize}
+
+\hypertarget{ux7b97ux7b26ux77e9ux9635}{%
+\subsubsection{2 算符矩阵}\label{ux7b97ux7b26ux77e9ux9635}}
+
+\hypertarget{ux77e9ux9635ux5143ux7d20}{%
+\paragraph{ 2.1 矩阵元素}\label{ux77e9ux9635ux5143ux7d20}}
+
+  设力学量Q的本征函数系为\(\{u_n(x)\}\)，则算符\(\hat{F}\)对应的矩阵元素为
+\[\begin{aligned}
+F_{m,n}&=(u_m(x),\hat{F}u_n(x))\\
+&=\int u_m^*(x)\hat{F}(x,-i\hbar\frac{\partial}{\partial x})u_n(x)dx
+\end{aligned}\]
+
+\hypertarget{ux6027ux8d28}{%
+\paragraph{ 2.2 性质}\label{ux6027ux8d28}}
+
+\begin{itemize}
+\tightlist
+\item
+  力学量矩阵是厄米矩阵，即对角元素为实数，非对角元素共轭对称；
+\item
+  力学量算符在自身表象中为对角矩阵，其对角元素就是其本征值。
+\end{itemize}
+
+\hypertarget{ux5b9eux4f8b}{%
+\paragraph{ 2.3 实例}\label{ux5b9eux4f8b}}
+
+\begin{itemize}
+\tightlist
+\item
+  坐标表象中的矩阵元素 \[\begin{aligned}
+    F_{x'x''}&=\int\Psi_{x'}^*(x)\hat{F}(x,-i\hbar\frac{\partial}{\partial x})\Psi_{x''}(x)dx\\
+    &=\int\delta(x-x')\hat{F}(x,-i\hbar\frac{\partial}{\partial x})\delta(x-x'')dx\\
+    &=\hat{F}(x',-i\hbar\frac{\partial}{\partial x'})\delta(x'-x'')
+  \end{aligned}\]
+\end{itemize}
+
+\hypertarget{ux8868ux8c61ux53d8ux6362}{%
+\subsubsection{3 表象变换}\label{ux8868ux8c61ux53d8ux6362}}
+
+\hypertarget{ux6001ux77e2ux91cfux7684ux53d8ux6362}{%
+\paragraph{ 3.1
+态矢量的变换}\label{ux6001ux77e2ux91cfux7684ux53d8ux6362}}
+
+\begin{itemize}
+\tightlist
+\item
+  力学量Q的本征函数为\(\{u_n\}\)，体系状态为\(\Psi=\sum_na_nu_n\)，则态矢量为
+  \[a=(a_1,a_2,\cdots,a_n,\cdots)^T\]
+\item
+  力学量Q'的本征函数为\(\{u'_m\}\)，体系状态为 \(\Psi=\sum_ma_mu_m\)，则态矢量为
+  \[a'=(a'_1,a'_2,\cdots,a_m,\cdots)^T\]
+\item
+  表象变换：\(a'=Sa\)，其中幺正矩阵S的矩阵元素为 \[S_{m,n}=(u'_m,u_n)\]
+\end{itemize}
+
+\hypertarget{ux7b97ux7b26ux77e9ux9635ux7684ux53d8ux6362}{%
+\paragraph{ 3.2
+算符矩阵的变换}\label{ux7b97ux7b26ux77e9ux9635ux7684ux53d8ux6362}}
+
+\begin{itemize}
+\tightlist
+\item
+  力学量F在Q表象(本征函数为\(\{u_n\}\))下的矩阵元素为
+  \[F_{m,n}=(u_m,\hat{F}u_n)\]
+\item
+  力学量F在Q表象(本征函数为\(\{u'_{\alpha}\}\))下的矩阵元素为
+  \[F'_{\alpha,\beta}=(u'_{\alpha},\hat{F}u'_{\beta})\]
+\item
+  表象变换：
+  \[u'_{\alpha}=\sum_mS_{m,\alpha}u_m,\,u'_{\beta}=\sum_nS_{n,\beta}u_n\]
+  故
+  \[\begin{aligned}
+  F'_{\alpha,\beta}&=(u'_{\alpha},\hat{F}u'_{\beta})\\
+  &=(\sum_mS_{\alpha,m}u_m,\hat{F}\sum_nS_{\beta,n}u_n)\\
+  &=\sum_m\sum_nS_{\alpha,m}(u_m,\hat{F}u_n)S^*_{\beta,n}\\
+  &=(SFS^H)_{\alpha,\beta}
+  \end{aligned}\]
+\item
+  算符变换：\(F'=SFS^H==SFS^{-1}\)
+\item
+  表象变换不改变算符的本征值
+\end{itemize}
+
+\hypertarget{ux4e8cux91cfux5b50ux529bux5b66ux7684ux77e9ux9635ux5f62ux5f0f}{%
+\subsection{二、量子力学的矩阵形式}\label{ux4e8cux91cfux5b50ux529bux5b66ux7684ux77e9ux9635ux5f62ux5f0f}}
+
+\hypertarget{ux5e73ux5747ux503c}{%
+\subsubsection{1 平均值}\label{ux5e73ux5747ux503c}}
+
+\begin{center}
+  \(\overline{F}=(\Psi,\hat{F}\Psi)=\Psi^HF\Psi\)
+\end{center}
+
+\hypertarget{ux672cux5f81ux65b9ux7a0b}{%
+\subsubsection{2 本征方程}\label{ux672cux5f81ux65b9ux7a0b}}
+
+\begin{center}
+  \(F\Psi=\lambda\Psi\Rightarrow det(F-\lambda I)=0\)
+\end{center}
+
+  从而解得\(\{\lambda_n\}\)和\(\{\Psi_n\}\)
+
+\hypertarget{ux859bux5b9aux8c14ux65b9ux7a0b}{%
+\subsubsection{3 薛定谔方程}\label{ux859bux5b9aux8c14ux65b9ux7a0b}}
+
+\begin{itemize}
+\tightlist
+\item
+  矩阵形式： \[i\hbar\frac{d\Psi}{dt}=H\Psi\]
+\item
+  分量形式：
+  \[i\hbar\frac{da_m(t)}{dt}=\sum_nH_{m,n}a_n(t),\,n=1,2,3,\cdots\] 其中
+  \[H_{m,n}=(u_m,\hat{H}u_n)=\int u^*_m(x)\hat{H}u_n(x)dx\]
+\end{itemize}
+
+\hypertarget{ux4e09ux72c4ux62c9ux514bux7b26ux53f7}{%
+\subsection{三、狄拉克符号}\label{ux4e09ux72c4ux62c9ux514bux7b26ux53f7}}
+
+\hypertarget{ux6001ux77e2ux91cf-1}{%
+\subsubsection{1 态矢量}\label{ux6001ux77e2ux91cf-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  右矢：\(|\,\rangle,|\Psi\rangle,|n\rangle,\cdots\)
+\item
+  左矢：\(\langle\,|,\langle\Psi|,\langle n|,\cdots\)
+\item
+  共轭关系：\(\langle\Psi|=|\Psi\rangle^H\)
+\end{itemize}
+
+\hypertarget{ux5185ux79ef}{%
+\subsubsection{2 内积}\label{ux5185ux79ef}}
+
+\hypertarget{ux5b9aux4e49}{%
+\paragraph{ 2.1 定义}\label{ux5b9aux4e49}}
+
+\begin{center}
+  \(\langle\Psi|\Phi\rangle=(\Psi,\Phi)=\int\Psi^*\Phi d\tau\)
+\end{center}
+
+\hypertarget{ux6027ux8d28-1}{%
+\paragraph{ 2.2 性质}\label{ux6027ux8d28-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  正则性：\(\langle\Psi|\Psi\rangle\geq0\)，当且仅当\(|\Psi\rangle=0\)时取等号
+\item
+  共轭对称性：\(\langle\Psi|\Phi\rangle=\langle\Phi|\Psi\rangle^*\)
+\item
+  线性：\(\langle\Psi|[c_1|\Phi_1\rangle+c_2|\Phi_2\rangle]=c_1\langle\Psi|\Phi_1\rangle+c_2\langle\Psi|\Phi_2\rangle\)
+\end{itemize}
+
+\hypertarget{ux6b63ux4ea4ux5f52ux4e00ux6027}{%
+\paragraph{ 2.3 正交归一性}\label{ux6b63ux4ea4ux5f52ux4e00ux6027}}
+
+\begin{itemize}
+\tightlist
+\item
+  归一性：\(\langle\Psi|\Psi\rangle=1\)
+\item
+  正交性：\(\langle\Psi|\Phi\rangle=0\)
+\end{itemize}
+
+\hypertarget{ux7b97ux7b26}{%
+\subsubsection{3 算符}\label{ux7b97ux7b26}}
+
+\hypertarget{ux7b97ux7b26ux5bf9ux6001ux77e2ux4f5cux7528}{%
+\paragraph{ 3.1
+算符对态矢作用}\label{ux7b97ux7b26ux5bf9ux6001ux77e2ux4f5cux7528}}
+
+\begin{itemize}
+\tightlist
+\item
+  对右矢向右作用，对左矢向左作用：
+  \[\langle\Phi|\hat{A}|\Psi\rangle=\langle\Phi|[\hat{A}|\Psi\rangle]=[\langle\Phi|\hat{A}]|\Psi\rangle\]
+\item
+  对于厄米算符：
+  \[[\langle\Psi|\hat{A}]^H=\hat{A}|\Psi\rangle\]
+\end{itemize}
+
+\hypertarget{ux529bux5b66ux91cfux5e73ux5747ux503c}{%
+\paragraph{ 3.2
+力学量平均值}\label{ux529bux5b66ux91cfux5e73ux5747ux503c}}
+
+\begin{center}
+  \(\overline{A}=\langle\Psi|\hat{A}|\Psi\rangle\)
+\end{center}
+
+\hypertarget{ux6295ux5f71ux7b97ux7b26}{%
+\paragraph{ 3.3 投影算符}\label{ux6295ux5f71ux7b97ux7b26}}
+
+\begin{itemize}
+\tightlist
+\item
+  向态矢\(|\xi\rangle\)的投影算符： \[P_{\xi}=|\xi\rangle\langle\xi|\]
+\item
+  向态矢\(|\xi\rangle\)投影：
+  \[P_{\xi}|\Psi\rangle=|\xi\rangle\langle\xi||\Psi\rangle=\langle\xi|\Psi\rangle|\xi\rangle=a_{\xi}|\xi\rangle\]
+\item
+  封闭关系： \[\sum_{\xi}|\xi\rangle\langle\xi|=I\]
+\end{itemize}
+
+\hypertarget{ux5e38ux7528ux6295ux5f71}{%
+\paragraph{ 3.4 常用投影}\label{ux5e38ux7528ux6295ux5f71}}
+
+\begin{itemize}
+\tightlist
+\item
+  \(\langle x|\Psi\rangle=\Psi(x)\)
+\item
+  \(\langle x|x_0\rangle=\delta(x-x_0)\)
+\item
+  \(\langle x|p\rangle=\frac{1}{\sqrt{2\pi\hbar}}e^{\frac{i}{\hbar}px}\)
+\item
+  \(\langle p|x\rangle=\langle x|p\rangle^*=\frac{1}{\sqrt{2\pi\hbar}}e^{-\frac{i}{\hbar}px}\)
+\end{itemize}
+
+\hypertarget{ux672cux5f81ux65b9ux7a0bux4e0eux672cux5f81ux6001}{%
+\subsubsection{4
+本征方程与本征态}\label{ux672cux5f81ux65b9ux7a0bux4e0eux672cux5f81ux6001}}
+
+\hypertarget{ux5206ux7acbux8c31}{%
+\paragraph{ 4.1 分立谱}\label{ux5206ux7acbux8c31}}
+
+\begin{itemize}
+\tightlist
+\item
+  本征方程：\(\hat{F}|n\rangle=\lambda_n|n\rangle\)
+\item
+  正交归一性：\(\langle m|n\rangle=\delta_{m,n}\)
+\item
+  封闭关系：\(\sum_n|n\rangle\langle n|=I\)
+\item
+  态的展开：
+  \[|\Psi\rangle=\sum_n|n\rangle\langle n|\Psi\rangle=\sum_na_n|n\rangle\]
+  其中
+  \[a_n=\langle n|\Psi\rangle=\int_{-\infty}^{+\infty}\varphi^*_n(x)\Psi(x)dx\]
+\end{itemize}
+
+\hypertarget{ux8fdeux7eedux8c31}{%
+\paragraph{ 4.2 连续谱}\label{ux8fdeux7eedux8c31}}
+
+\begin{itemize}
+\tightlist
+\item
+  本征方程：\(\hat{F}|\lambda\rangle=\lambda|\lambda\rangle\)
+\item
+  正交归一性：\(\langle\lambda|\lambda'\rangle=\delta(\lambda-\lambda')\)
+\item
+  封闭关系：\(\int_{-\infty}^{+\infty}|\lambda\rangle\langle\lambda|d\lambda=I\)
+\item
+  态的展开：\[|\Psi\rangle=\int_{-\infty}^{+\infty}|\lambda\rangle\langle\lambda|\Psi\rangle d\lambda=\int_{-\infty}^{+\infty}a(\lambda)|\lambda\rangle d\lambda\]
+  其中
+  \[a(\lambda)=\langle\lambda|\Psi\rangle=\int_{-\infty}^{+\infty}\varphi^*_{\lambda}(x)\Psi(x)dx\]
+\end{itemize}
+
+\hypertarget{ux529bux5b66ux91cfux7684ux77e9ux9635ux8868ux793a}{%
+\subsubsection{5
+力学量的矩阵表示}\label{ux529bux5b66ux91cfux7684ux77e9ux9635ux8868ux793a}}
+
+\hypertarget{ux77e9ux9635ux5143ux7d20-1}{%
+\paragraph{ 5.1 矩阵元素}\label{ux77e9ux9635ux5143ux7d20-1}}
+
+  设力学量Q的本征函数系为\(\{|\lambda_n\rangle\}\)，则算符\(\hat{F}\)对应的矩阵元素为
+\[F_{m,n}=\langle\lambda_m|\hat{F}|\lambda_n\rangle\]
+
+\hypertarget{ux5750ux6807ux8868ux8c61}{%
+\paragraph{ 5.2 坐标表象}\label{ux5750ux6807ux8868ux8c61}}
+
+\begin{itemize}
+\tightlist
+\item
+  坐标x的矩阵表示：
+  \[x_{x_1,x_2}=\langle x_1|\hat{x}|x_2\rangle=x_1\delta(x_1-x_2)\]
+\item
+  动量p的矩阵表示：
+  \[p_{x_1,x_2}=\langle x_1|\hat{p}|x_2\rangle=-i\hbar\frac{\partial}{\partial x_1}\delta(x_1-x_2)\]
+\end{itemize}
+
+\hypertarget{ux52a8ux91cfux8868ux8c61}{%
+\paragraph{ 5.3 动量表象}\label{ux52a8ux91cfux8868ux8c61}}
+
+\begin{itemize}
+\tightlist
+\item
+  动量p的矩阵表示：
+  \[p_{x_1,x_2}=\langle x_1|\hat{p}|x_2\rangle=p_1\delta(p_1-p_2)\]
+\item
+  坐标x的矩阵表示：
+  \[x_{p_1,p_2}=\langle p_1|\hat{x}|p_2\rangle=i\hbar\frac{\partial}{\partial p_1}\delta(p_1-p_2)\]
+\end{itemize}
+
+\hypertarget{ux859bux5b9aux8c14ux65b9ux7a0b-1}{%
+\subsubsection{6 薛定谔方程}\label{ux859bux5b9aux8c14ux65b9ux7a0b-1}}
+
+\hypertarget{ux72c4ux62c9ux514bux7b26ux53f7ux8868ux793a}{%
+\paragraph{ 5.1
+狄拉克符号表示}\label{ux72c4ux62c9ux514bux7b26ux53f7ux8868ux793a}}
+
+\[i\hbar\frac{\partial}{\partial t}|\Psi(t)\rangle=H|\Psi(t)\rangle\]
+
+  其中 \[H=\frac{p^2}{2m}+V(x)\]
+
+\hypertarget{ux5750ux6807ux8868ux8c61-1}{%
+\paragraph{ 5.2 坐标表象}\label{ux5750ux6807ux8868ux8c61-1}}
+
+  用\(\langle x|\)左乘上式，得
+\[i\hbar\frac{\partial}{\partial t}\langle x|\Psi(t)\rangle=\langle x|H|\Psi(t)\rangle\]
+
+  化简可得
+\[i\hbar\frac{\partial}{\partial t}|\Psi(x,t)\rangle=-\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2}\Psi(x,t)+V(x)\Psi(x,t)\]
+
+\hypertarget{ux52a8ux91cfux8868ux8c61-1}{%
+\paragraph{ 5.3 动量表象}\label{ux52a8ux91cfux8868ux8c61-1}}
+
+  用\(\langle p|\)左乘上式，得
+\[i\hbar\frac{\partial}{\partial t}\langle p|\Psi(t)\rangle=\langle p|H|\Psi(t)\rangle\]
+
+  化简可得
+\[i\hbar\frac{\partial}{\partial t}|\Psi(p,t)\rangle=\frac{p^2}{2m}\Psi(p,t)+V(i\hbar\frac{\partial}{\partial p})\Psi(p,t)\]
+
+\end{document}
