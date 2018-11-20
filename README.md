@@ -1,3 +1,3 @@
 # Mechanics
 
-summary for quantumn mechanics and statistic mechanics
+summary for quantum mechanics and statistic mechanics
