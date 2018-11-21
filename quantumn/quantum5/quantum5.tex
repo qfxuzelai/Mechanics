@@ -1,0 +1,750 @@
+\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[UTF8,twocolumn]{ctexart}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provides euro and other symbols
+\else % if luatex or xelatex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\usepackage{hyperref}
+\hypersetup{
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+
+\date{}
+
+\begin{document}
+
+\hypertarget{ux7b2cux4e94ux7ae0-ux81eaux65cbux4e0eux89d2ux52a8ux91cfux521dux6b65}{%
+\section{第五章{ }
+自旋与角动量初步}\label{ux7b2cux4e94ux7ae0-ux81eaux65cbux4e0eux89d2ux52a8ux91cfux521dux6b65}}
+
+\hypertarget{ux4e00ux7535ux5b50ux81eaux65cbux7684ux5b9eux9a8cux4f9dux636e}{%
+\subsection{一、电子自旋的实验依据}\label{ux4e00ux7535ux5b50ux81eaux65cbux7684ux5b9eux9a8cux4f9dux636e}}
+
+\hypertarget{stern-gerlachux5b9eux9a8c}{%
+\subsubsection{1 Stern-Gerlach实验}\label{stern-gerlachux5b9eux9a8c}}
+
+\hypertarget{ux8f68ux9053ux78c1ux77e9}{%
+\paragraph{ 1.1 轨道磁矩}\label{ux8f68ux9053ux78c1ux77e9}}
+
+\begin{itemize}
+\tightlist
+\item
+  玻尔磁子：\(\mu_B=\frac{e\hbar}{2m_e}\)
+\item
+  轨道磁矩：\(\hat{\vec{\mu_l}}=-\frac{\mu_B}{\hbar}\hat{\vec{L}}\)
+\end{itemize}
+
+\hypertarget{ux7ed3ux8bba}{%
+\paragraph{ 1.2 结论}\label{ux7ed3ux8bba}}
+
+\begin{itemize}
+\tightlist
+\item
+  原子在磁场中的取向是量子化的；
+\item
+  除轨道角动量外，电子还具有角量子数 S=1/2的自旋角动量。
+\end{itemize}
+
+\hypertarget{ux4e8cux7535ux5b50ux81eaux65cbux7684ux63cfux8ff0ux4e0eux81eaux65cbux7b97ux7b26}{%
+\subsection{二、电子自旋的描述与自旋算符}\label{ux4e8cux7535ux5b50ux81eaux65cbux7684ux63cfux8ff0ux4e0eux81eaux65cbux7b97ux7b26}}
+
+\hypertarget{ux7535ux5b50ux81eaux65cbux5047ux8bbe}{%
+\subsubsection{1
+电子自旋假设}\label{ux7535ux5b50ux81eaux65cbux5047ux8bbe}}
+
+\begin{itemize}
+\tightlist
+\item
+  电子存在一种内禀的自旋运动，响应地有自旋角动量和自旋磁矩；
+\item
+  若S为电子的自旋量子数，则自旋角动量\(\vec{S}\)的大小为\(|\vec{S}|=\sqrt{S(S+1)}\hbar\)；
+\item
+  电子自旋角动量相对外磁场的取向是空间量子化的。特别的，其在z方向的投影只能取两个值，即\(S_z=\pm\frac{\hbar}{2}\)
+\end{itemize}
+
+\hypertarget{ux81eaux65cbux7b97ux7b26}{%
+\subsubsection{2 自旋算符}\label{ux81eaux65cbux7b97ux7b26}}
+
+\hypertarget{ux81eaux65cbux7b97ux7b26-1}{%
+\paragraph{ 2.1 自旋算符}\label{ux81eaux65cbux7b97ux7b26-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  \(\hat{\vec{S}}=\vec{i}\hat{S}_x+\vec{j}\hat{S}_y+\vec{k}\hat{S}_z\)
+\item
+  \(\hat{S^2}=\hat{S}_x^2+\hat{S}_y^2+\hat{S}_z^2\)
+\end{itemize}
+
+\hypertarget{ux5bf9ux6613ux5173ux7cfb}{%
+\paragraph{ 2.2 对易关系}\label{ux5bf9ux6613ux5173ux7cfb}}
+
+\begin{itemize}
+\tightlist
+\item
+  \(\hat{\vec{S}}\times\hat{\vec{S}}=i\hbar\hat{\vec{S}}\)
+\item
+  \(\begin{cases}
+    [\hat{S}_x,\hat{S}_y]=i\hbar\hat{S}_z \\
+    [\hat{S}_y,\hat{S}_z]=i\hbar\hat{S}_x \\
+    [\hat{S}_z,\hat{S}_x]=i\hbar\hat{S}_y 
+  \end{cases}\)
+\item
+  \([\hat{S^2},\hat{S}_x]=[\hat{S^2},\hat{S}_y]=[\hat{S^2},\hat{S}_z]=0\)
+\end{itemize}
+
+\hypertarget{ux5171ux540cux672cux5f81ux6001}{%
+\paragraph{ 2.3 共同本征态}\label{ux5171ux540cux672cux5f81ux6001}}
+
+\begin{itemize}
+\tightlist
+\item
+  \(\{\hat{S^2},\hat{S}_z\}\)的共同本征态为\(|Sm\rangle\)
+\item
+  自旋量子数：\(S=0,1/2,1,3/2,\cdots\)
+\item
+  自旋磁量子数：\(m=-S,-S+1,\cdots,S-1,S\)
+\item
+  本征方程： \[\begin{cases}
+    \hat{S^2}|Sm\rangle=S(S+1)\hbar^2|Sm\rangle \\
+    \hat{S_z}|Sm\rangle=m\hbar|Sm\rangle
+  \end{cases}\]
+\end{itemize}
+
+\hypertarget{ux7535ux5b50ux81eaux65cbux60c5ux51b5}{%
+\paragraph{ 2.4
+电子自旋情况}\label{ux7535ux5b50ux81eaux65cbux60c5ux51b5}}
+
+\begin{itemize}
+\tightlist
+\item
+  \(S=\frac{1}{2},m=\pm\frac{1}{2}\)
+\item
+  \(\hat{S}_x^2=\hat{S}_y^2=\hat{S}_z^2=\frac{\hbar^2}{4}\)
+\item
+  \(\hat{S}^2=\frac{3\hbar^2}{4}\)
+\item
+  共同本征态：\(|Sm\rangle=|\frac{1}{2},\pm\frac{1}{2}\rangle=|\pm\rangle\)
+\end{itemize}
+
+\hypertarget{ux6ce1ux5229ux7b97ux7b26}{%
+\subsubsection{3 泡利算符}\label{ux6ce1ux5229ux7b97ux7b26}}
+
+\hypertarget{ux6ce1ux5229ux7b97ux7b26-1}{%
+\paragraph{ 3.1 泡利算符}\label{ux6ce1ux5229ux7b97ux7b26-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  \(\hat{\vec{S}}=\frac{\hbar}{2}\hat{\vec{\sigma}}\)
+\item
+  \(\hat{\sigma}_x^2=\hat{\sigma}_y^2=\hat{\sigma}_z^2=1\)
+\item
+  \(\hat{\sigma}^2=3\)
+\end{itemize}
+
+\hypertarget{ux5bf9ux6613ux5173ux7cfb-1}{%
+\paragraph{ 3.2 对易关系}\label{ux5bf9ux6613ux5173ux7cfb-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  \(\hat{\vec{\sigma}}\times\hat{\vec{\sigma}}=2i\hat{\vec{\sigma}}\)
+\item
+  \(\begin{cases}
+        [\hat{\sigma}_x,\hat{\sigma}_y]=2i\hat{\sigma}_z \\
+        [\hat{\sigma}_y,\hat{\sigma}_z]=2i\hat{\sigma}_x \\
+        [\hat{\sigma}_z,\hat{\sigma}_x]=2i\hat{\sigma}_y 
+  \end{cases}\)
+\item
+  \([\hat{\sigma^2},\hat{\sigma}_x]=[\hat{\sigma^2},\hat{\sigma}_y]=[\hat{\sigma^2},\hat{\sigma}_z]=0\)
+\end{itemize}
+
+\hypertarget{ux53cdux5bf9ux6613ux5173ux7cfb}{%
+\paragraph{ 3.3 反对易关系}\label{ux53cdux5bf9ux6613ux5173ux7cfb}}
+
+\begin{center}
+$\begin{cases}
+        \hat{\sigma}_x\hat{\sigma}_y+\hat{\sigma}_y\hat{\sigma}_x=0 \\
+        \hat{\sigma}_y\hat{\sigma}_z+\hat{\sigma}_z\hat{\sigma}_y=0 \\
+        \hat{\sigma}_z\hat{\sigma}_x+\hat{\sigma}_x\hat{\sigma}_z=0
+\end{cases}$
+\end{center}
+
+\hypertarget{ux5206ux91cfux5173ux7cfb}{%
+\paragraph{ 3.4 分量关系}\label{ux5206ux91cfux5173ux7cfb}}
+
+\begin{center}
+$\begin{cases}
+        \hat{\sigma}_x\hat{\sigma}_y=-\hat{\sigma}_y\hat{\sigma}_x=i\hat{\sigma}_z \\
+        \hat{\sigma}_y\hat{\sigma}_z=-\hat{\sigma}_z\hat{\sigma}_y=i\hat{\sigma}_x \\
+        \hat{\sigma}_z\hat{\sigma}_x=-\hat{\sigma}_x\hat{\sigma}_z=i\hat{\sigma}_y
+\end{cases}$
+\end{center}
+
+\hypertarget{ux672cux5f81ux503c}{%
+\paragraph{ 3.5 本征值}\label{ux672cux5f81ux503c}}
+
+  \(\hat{\sigma}_x,\hat{\sigma}_y,\hat{\sigma}_z\)的本征值均为\(\pm1\)。
+
+\hypertarget{ux6ce1ux5229ux77e9ux9635}{%
+\paragraph{ 3.6 泡利矩阵}\label{ux6ce1ux5229ux77e9ux9635}}
+
+\begin{itemize}
+\tightlist
+\item
+  x分量： \[\sigma_x=\left[
+  \begin{matrix}
+    0 & 1 \\
+    1 & 0 
+  \end{matrix}\right],
+  |+\rangle_x=\left[
+  \begin{matrix}
+    \frac{\sqrt{2}}{2} \\
+    \frac{\sqrt{2}}{2}
+  \end{matrix}\right],
+  |-\rangle_x=\left[
+  \begin{matrix}
+    -\frac{\sqrt{2}}{2} \\
+    \frac{\sqrt{2}}{2}
+  \end{matrix}\right]\]
+\item
+  y分量： \[\sigma_y=\left[
+  \begin{matrix}
+    0 & -i \\
+    i & 0 
+  \end{matrix}\right],
+  |+\rangle_y=\left[
+  \begin{matrix}
+    \frac{\sqrt{2}}{2} \\
+    \frac{\sqrt{2}}{2}i
+  \end{matrix}\right],
+  |-\rangle_y=\left[
+  \begin{matrix}
+    \frac{\sqrt{2}}{2}i \\
+    \frac{\sqrt{2}}{2}
+  \end{matrix}\right]\]
+\item
+  z分量： \[\sigma_z=\left[
+  \begin{matrix}
+    1 & 0 \\
+    0 & -1 
+  \end{matrix}\right],
+  |+\rangle_z=\left[
+  \begin{matrix}
+    1 \\
+    0
+  \end{matrix}\right],
+  |-\rangle_z=\left[
+  \begin{matrix}
+    0 \\
+    1
+  \end{matrix}\right]\]
+\end{itemize}
+
+\hypertarget{ux7535ux5b50ux81eaux65cbux6001}{%
+\subsubsection{4 电子自旋态}\label{ux7535ux5b50ux81eaux65cbux6001}}
+
+\hypertarget{ux7535ux5b50ux7684ux4e8cux5206ux91cfux6ce2ux51fdux6570}{%
+\paragraph{ 4.1
+电子的二分量波函数}\label{ux7535ux5b50ux7684ux4e8cux5206ux91cfux6ce2ux51fdux6570}}
+
+\begin{center}
+  $\begin{aligned}
+  \Psi(\vec{r},t)&=\left[
+  \begin{matrix}
+    \Psi_1(\vec{r},t) \\ \Psi_2(\vec{r},t)
+  \end{matrix}\right] \\
+  &=c_1\psi_1(\vec{r},t)\left[
+  \begin{matrix}
+    1 \\ 0
+  \end{matrix}\right]
+  +c_2\psi_2(\vec{r},t)\left[
+  \begin{matrix}
+    0 \\ 1
+  \end{matrix}\right]
+\end{aligned}$
+
+\end{center}
+
+  其中\(\Psi_1(\vec{r},t)\)对应\(S_z=\frac{\hbar}{2}\)时的波函数，\(\Psi_2(\vec{r},t)\) 对应\(S_z=-\frac{\hbar}{2}\)时的波函数。
+
+\hypertarget{ux4e8cux5206ux91cfux6ce2ux51fdux6570ux7684ux6027ux8d28}{%
+\paragraph{ 4.2
+二分量波函数的性质}\label{ux4e8cux5206ux91cfux6ce2ux51fdux6570ux7684ux6027ux8d28}}
+
+\begin{itemize}
+\tightlist
+\item
+  归一性：\(\int\Psi^H\Psi d\tau=\int(|\Psi_1|^2+|\Psi_2|^2)d\tau=1\)
+\item
+  空间概率密度：\(w(\vec{r},t)=\Psi^H\Psi=|\Psi_1|^2+|\Psi_2|^2\)
+\item
+  自旋状态的概率： \[\begin{cases}
+    P(S_z=\frac{\hbar}{2})=\int|\Psi_1|^2d\tau=c_1^2 \\
+    P(S_z=-\frac{\hbar}{2})=\int|\Psi_2|^2d\tau=c_2^2
+  \end{cases}\]
+\end{itemize}
+
+\hypertarget{ux975eux8026ux5408ux72b6ux6001}{%
+\paragraph{ 4.4 非耦合状态}\label{ux975eux8026ux5408ux72b6ux6001}}
+
+  当自旋和轨道运动非耦合时，二分量波函数可以写为
+\[\Psi(\vec{r},t)=\Psi_0(\vec{r},t)\chi(s_z)\]
+  其中\(\chi(s_z)\)为电子的自旋波函数，可写为
+\[\chi(s_z)=c_1\chi_{1/2}(s_z)+c_2\chi_{-1/2}(s_z)\]
+
+\hypertarget{ux7535ux5b50ux78c1ux77e9}{%
+\subsubsection{5 电子磁矩}\label{ux7535ux5b50ux78c1ux77e9}}
+
+\begin{itemize}
+\tightlist
+\item
+  玻尔磁子：\(\mu_B=\frac{e\hbar}{2m_e}\)
+\item
+  轨道磁矩：\(\hat{\vec{\mu_l}}=-\frac{\mu_B}{\hbar}\hat{\vec{L}}\)
+\item
+  自旋磁矩：\(\hat{\vec{\mu_s}}=-\frac{2\mu_B}{\hbar}\hat{\vec{S}}\)
+\item
+  电子磁矩与外磁场的相互作用能：\(W=-(\hat{\vec{\mu_l}}+\hat{\vec{\mu_s}})\cdot\vec{B}\)
+\end{itemize}
+
+\hypertarget{ux7535ux5b50ux5728ux5916ux78c1ux573aux4e2dux7684ux8fd0ux52a8}{%
+\subsubsection{6
+电子在外磁场中的运动}\label{ux7535ux5b50ux5728ux5916ux78c1ux573aux4e2dux7684ux8fd0ux52a8}}
+
+\begin{itemize}
+\tightlist
+\item
+  若忽略电子的轨道运动，则
+  \[\hat{H}=\mu_B(\hat{\sigma}_xB_x+\hat{\sigma}_yB_y+\hat{\sigma}_zB_z)\]
+\item
+  若外磁场沿\((\theta,\varphi)\)方向，则对应的本征态为 \[\begin{cases}
+    |(\theta,\varphi)+\rangle=
+    \left[\begin{matrix}
+        cos(\theta/2)e^{-i\varphi/2} \\
+        sin(\theta/2)e^{i\varphi/2}
+    \end{matrix}\right]\\\\
+    |(\theta,\varphi)-\rangle=
+    \left[\begin{matrix}
+        -sin(\theta/2)e^{-i\varphi/2} \\
+        cos(\theta/2)e^{i\varphi/2}
+    \end{matrix}\right]
+  \end{cases}\]
+\item
+  将初始状态用本征态展开：
+  \[\Psi(0)=c_1|(\theta,\varphi)+\rangle+c_2|(\theta,\varphi)-\rangle\]
+\item
+  则t时刻自旋状态为
+  \[\Psi(t)=c_1e^{-\frac{i\mu_BB_0}{\hbar}t}|(\theta,\varphi)+\rangle+c_2e^{\frac{i\mu_BB_0}{\hbar}t}|(\theta,\varphi)-\rangle\]
+\item
+  t时刻自旋状态为\(\psi\)的概率为
+  \[P(\Psi(t)=\psi)=\langle\psi|\Psi(t)\rangle\]
+\end{itemize}
+
+\hypertarget{ux4e09ux89d2ux52a8ux91cfux7684ux5408ux6210}{%
+\subsection{三、角动量的合成}\label{ux4e09ux89d2ux52a8ux91cfux7684ux5408ux6210}}
+
+\hypertarget{ux89d2ux52a8ux91cfux7684ux5408ux6210ux89c4ux5219}{%
+\subsubsection{1
+角动量的合成规则}\label{ux89d2ux52a8ux91cfux7684ux5408ux6210ux89c4ux5219}}
+
+\hypertarget{ux603bux89d2ux52a8ux91cf}{%
+\paragraph{ 1.1 总角动量}\label{ux603bux89d2ux52a8ux91cf}}
+
+  设角动量\(\hat{\vec{J_1}}\)和\(\hat{\vec{J_2}}\)相互独立，即它们的各分量是互相对易的，也即
+\[[\hat{J}_{1i},\hat{J}_{2j}]=0\,\,\,\,\,\,\,i,j=x,y,z\]
+  则矢量和\(\hat{\vec{J}}=\hat{\vec{J_1}}+\hat{\vec{J_2}}\)也是一个角动量算符，称为总角动量，它满足角动量的一般对易关系
+\[\hat{\vec{J}}\times\hat{\vec{J}}=i\hbar\hat{\vec{J}}\]
+
+\hypertarget{ux5bf9ux6613ux5173ux7cfb-2}{%
+\paragraph{ 1.2 对易关系}\label{ux5bf9ux6613ux5173ux7cfb-2}}
+
+\begin{itemize}
+\tightlist
+\item
+  \([\hat{J}_z,\hat{J}_1^2]=[\hat{J}_z,\hat{J}_2^2]=0\)
+\item
+  \([\hat{\vec{J}},\hat{J}_1^2]=[\hat{\vec{J}},\hat{J}_2^2]=0\)
+\item
+  \([\hat{J}^2,\hat{J}_1^2]=[\hat{J}^2,\hat{J}_2^2]=0\)
+\end{itemize}
+
+\hypertarget{ux529bux5b66ux91cfux5b8cux5168ux96c6}{%
+\paragraph{ 1.3
+力学量完全集}\label{ux529bux5b66ux91cfux5b8cux5168ux96c6}}
+
+\begin{itemize}
+\tightlist
+\item
+  非耦合表象：\(\{\hat{J}_1^2,\hat{J}_{1z},\hat{J}_2^2,\hat{J}_{2z}\}\)
+\item
+  耦合表象：\(\{\hat{J}_1^2,\hat{J}_2^2,\hat{J}^2,\hat{J}_z\}\)
+\end{itemize}
+
+\hypertarget{ux975eux8026ux5408ux8868ux8c61ux548cux8026ux5408ux8868ux8c61}{%
+\subsubsection{2
+非耦合表象和耦合表象}\label{ux975eux8026ux5408ux8868ux8c61ux548cux8026ux5408ux8868ux8c61}}
+
+\hypertarget{ux975eux8026ux5408ux8868ux8c61}{%
+\paragraph{ 2.1 非耦合表象}\label{ux975eux8026ux5408ux8868ux8c61}}
+
+\begin{itemize}
+\tightlist
+\item
+  力学量完全集：\(\{\hat{J}_1^2,\hat{J}_{1z},\hat{J}_2^2,\hat{J}_{2z}\}\)
+\item
+  基底：\(|j_1m_1j_2m_2\rangle=|j_1m_1\rangle|j_2m_2\rangle\)
+\item
+  维数：\((2j_1+1)(2j_2+1)\)
+\item
+  封闭关系：
+  \[\sum_{m_1=-j_1}^{j_1}\sum_{m_2=-j_2}^{j_2}|j_1m_1j_2m_2\rangle\langle j_1m_1j_2m_2|=I\]
+\item
+  本征方程： \[\begin{cases}
+  \hat{J}_1^2|j_1m_1j_2m_2\rangle=j_1(j_1+1)\hbar^2|j_1m_1j_2m_2\rangle \\
+  \hat{J}_{1z}|j_1m_1j_2m_2\rangle=m_1\hbar|j_1m_1j_2m_2\rangle \\
+  \hat{J}_2^2|j_1m_1j_2m_2\rangle=j_2(j_2+1)\hbar^2|j_1m_1j_2m_2\rangle \\
+  \hat{J}_{2z}|j_1m_1j_2m_2\rangle=m_2\hbar|j_1m_1j_2m_2\rangle
+  \end{cases}\]
+\end{itemize}
+
+\hypertarget{ux8026ux5408ux8868ux8c61}{%
+\paragraph{ 2.2 耦合表象}\label{ux8026ux5408ux8868ux8c61}}
+
+\begin{itemize}
+\tightlist
+\item
+  力学量完全集：\(\{\hat{J}_1^2,\hat{J}_2^2,\hat{J}^2,\hat{J}_z\}\)
+\item
+  基底：\(|j_1j_2jm\rangle\)
+\item
+  维数：\(\sum_{j=j_{min}}^{j_{max}}(2j+1)=(2j_1+1)(2j_2+1)\)
+\item
+  封闭关系：
+  \[\sum_{j=j_{min}}^{j_{max}}\sum_{m=-j}^{j}|j_1j_2jm\rangle\langle j_1j_2jm|=I\]
+\item
+  本征方程： \[\begin{cases}
+  \hat{J}_1^2|j_1j_2jm\rangle=j_1(j_1+1)\hbar^2|j_1j_2jm\rangle \\
+  \hat{J}_2^2|j_1j_2jm\rangle=j_2(j_2+1)\hbar^2|j_1j_2jm\rangle \\
+  \hat{J}^2|j_1j_2jm\rangle=j(j+1)\hbar^2|j_1j_2jm\rangle \\
+  \hat{J}_z|j_1j_2jm\rangle=m\hbar|j_1j_2jm\rangle
+  \end{cases}\]
+\end{itemize}
+
+\hypertarget{ux8868ux8c61ux53d8ux6362}{%
+\paragraph{ 2.3 表象变换}\label{ux8868ux8c61ux53d8ux6362}}
+
+\begin{itemize}
+\tightlist
+\item
+  矢量耦合系数：
+  \[C_{j_1m_1j_2m_2}^{jm}=\langle j_1m_1j_2m_2|j_1j_2jm\rangle\]
+\item
+  表象变换： \[\begin{aligned}
+  |j_1j_2jm\rangle&=\sum_{m_1=-j_1}^{j_1}\sum_{m_2=-j_2}^{j_2}|j_1m_1j_2m_2\rangle\langle j_1m_1j_2m_2|j_1j_2jm\rangle \\
+  &=\sum_{m_1=-j_1}^{j_1}\sum_{m_2=-j_2}^{j_2}C_{j_1m_1j_2m_2}^{jm}|j_1m_1j_2m_2\rangle
+  \end{aligned}\]
+\end{itemize}
+
+\hypertarget{ux603bux89d2ux52a8ux91cfux7684ux672cux5f81ux503cux8c31}{%
+\subsubsection{3
+总角动量的本征值谱}\label{ux603bux89d2ux52a8ux91cfux7684ux672cux5f81ux503cux8c31}}
+
+\begin{itemize}
+\tightlist
+\item
+  \(m=m_1+m_2\)
+\item
+  \(j_{max}=j_1+j_2\)
+\item
+  \(j_{min}=|j_1-j_2|\)
+\item
+  \(j=|j_1-j_2|,|j_1-j_2|+1,\cdots,j_1+j_2\)
+\end{itemize}
+
+\hypertarget{ux56dbux5168ux540cux7c92ux5b50ux4f53ux7cfb}{%
+\subsection{四、全同粒子体系}\label{ux56dbux5168ux540cux7c92ux5b50ux4f53ux7cfb}}
+
+\hypertarget{ux591aux7c92ux5b50ux4f53ux7cfbux7684ux63cfux5199}{%
+\subsubsection{1
+多粒子体系的描写}\label{ux591aux7c92ux5b50ux4f53ux7cfbux7684ux63cfux5199}}
+
+\hypertarget{ux6ce2ux51fdux6570}{%
+\paragraph{ 1.1 波函数}\label{ux6ce2ux51fdux6570}}
+
+\begin{center}
+\(\Psi=\Psi(q_1,q_2,\cdots,q_N;t)\)
+\end{center}
+
+\hypertarget{ux54c8ux5bc6ux987fux91cf}{%
+\paragraph{ 1.2 哈密顿量}\label{ux54c8ux5bc6ux987fux91cf}}
+
+\begin{center}
+\(\hat{H}=\sum_{i=1}^N-\frac{\hbar^2}{2m_i}\nabla_i^2+U(q_1,q_2,\cdots,q_N;t)\)
+\end{center}
+
+\hypertarget{ux859bux5b9aux8c14ux65b9ux7a0b}{%
+\paragraph{ 1.3 薛定谔方程}\label{ux859bux5b9aux8c14ux65b9ux7a0b}}
+
+\begin{center}
+\(i\hbar\frac{\partial}{\partial t}\Psi=\hat{H}\Psi\)
+\end{center}
+
+\hypertarget{ux5168ux540cux6027ux5047ux8bbe}{%
+\subsubsection{2 全同性假设}\label{ux5168ux540cux6027ux5047ux8bbe}}
+
+\begin{itemize}
+\tightlist
+\item
+  全同粒子：全部内禀性质完全相同的一类微观粒子。
+\item
+  全同性假设：全同粒子体系中任一两个粒子交换都不改变体系的物理状态。
+\end{itemize}
+
+\hypertarget{ux4ea4ux6362ux7b97ux7b26ux4e0eux5bf9ux79f0ux6027}{%
+\subsubsection{3
+交换算符与对称性}\label{ux4ea4ux6362ux7b97ux7b26ux4e0eux5bf9ux79f0ux6027}}
+
+\hypertarget{ux4ea4ux6362ux7b97ux7b26}{%
+\paragraph{ 3.1 交换算符}\label{ux4ea4ux6362ux7b97ux7b26}}
+
+\begin{itemize}
+\tightlist
+\item
+  定义：对\(\forall i\neq j\)有
+  \[\hat{P}_{ij}\Psi(q_i,\cdots,q_j)=\Psi(q_j,\cdots,q_i)\]
+\item
+  性质：\(\hat{P}_{ij}\)是幺正厄米算符。
+\item
+  对称性： \[\hat{P}_{ij}\Psi=\begin{cases}
+    \Psi & \mbox{对称波函数} \\
+    -\Psi & \mbox{反对称波函数}
+  \end{cases}\]
+\end{itemize}
+
+\hypertarget{ux73bbux8272ux5b50}{%
+\paragraph{ 3.2 玻色子}\label{ux73bbux8272ux5b50}}
+
+\begin{itemize}
+\tightlist
+\item
+  交换对称性：\(\hat{P}_{ij}\Psi^S=\Psi^S\)
+\item
+  自旋量子数为整数：\(S_b=m\hbar\)
+\item
+  满足对易规则：\([b(\vec{q}_1),b(\vec{q}_2)]=0\)
+\item
+  实例：光子，\(\alpha\)粒子
+\end{itemize}
+
+\hypertarget{ux8d39ux7c73ux5b50}{%
+\paragraph{ 3.3 费米子}\label{ux8d39ux7c73ux5b50}}
+
+\begin{itemize}
+\tightlist
+\item
+  交换反对称性：\(\hat{P}_{ij}\Psi^A=-\Psi^A\)
+\item
+  自旋量子数为半整数：\(S_f=(m+\frac{1}{2})\hbar\)
+\item
+  满足反对易规则：\(\{f(\vec{q}_1),f(\vec{q}_2)\}=0\)
+\item
+  实例：电子，质子，中子
+\end{itemize}
+
+\hypertarget{ux590dux5408ux7c92ux5b50}{%
+\paragraph{ 3.4 复合粒子}\label{ux590dux5408ux7c92ux5b50}}
+
+\begin{itemize}
+\tightlist
+\item
+  多个玻色子构成玻色子
+\item
+  偶数个费米子构成玻色子
+\item
+  奇数个费米子构成费米子
+\end{itemize}
+
+\hypertarget{ux5168ux540cux7c92ux5b50ux4f53ux7cfbux54c8ux5bc6ux987fux91cf}{%
+\subsubsection{4
+全同粒子体系哈密顿量}\label{ux5168ux540cux7c92ux5b50ux4f53ux7cfbux54c8ux5bc6ux987fux91cf}}
+
+\begin{itemize}
+\tightlist
+\item
+  性质：任意交换两个全同粒子，体系的哈密顿量不变
+\item
+  公式：
+  \[\hat{P}_{ij}\hat{H}\hat{P}_{ij}^H=\hat{H}\Leftrightarrow [\hat{P}_{ij},\hat{H}]=0\]
+\end{itemize}
+
+\hypertarget{ux5bf9ux79f0ux4e0eux53cdux5bf9ux79f0ux6ce2ux51fdux6570}{%
+\subsubsection{5
+对称与反对称波函数}\label{ux5bf9ux79f0ux4e0eux53cdux5bf9ux79f0ux6ce2ux51fdux6570}}
+
+\hypertarget{ux5355ux7c92ux5b50ux8fd1ux4f3c}{%
+\paragraph{ 5.1 单粒子近似}\label{ux5355ux7c92ux5b50ux8fd1ux4f3c}}
+
+  对于无耦合体系，其总波函数为单个粒子波函数的乘积
+\[\Psi(q_1,q_2,\cdots,q_N)=\Psi_1(q_1)\Psi_2(q_2)\cdots\Psi_N(q_N)\]
+
+\hypertarget{ux4e24ux7c92ux5b50ux4f53ux7cfb}{%
+\paragraph{ 5.2 两粒子体系}\label{ux4e24ux7c92ux5b50ux4f53ux7cfb}}
+
+\begin{itemize}
+\tightlist
+\item
+  玻色子： \[\begin{cases}
+    \Psi_{kk}^S(q_1,q_2)=\psi_{k}(q_1)\psi_{k}(q_2) \\
+    \Psi_{k_1k_2}^S(q_1,q_2)=\frac{1}{\sqrt{2}}[\psi_{k1}(q_1)\psi_{k2}(q_2)+\psi_{k1}(q_2)\psi_{k2}(q_1)]
+  \end{cases}\]
+\item
+  费米子：\(k_1\neq k_2\)时
+  \[\Psi_{k_1k_2}^A(q_1,q_2)=\frac{1}{\sqrt{2}}[\psi_{k1}(q_1)\psi_{k2}(q_2)-\psi_{k1}(q_2)\psi_{k2}(q_1)]\]
+\end{itemize}
+
+\hypertarget{nux7c92ux5b50ux4f53ux7cfb}{%
+\paragraph{ 5.3 N粒子体系}\label{nux7c92ux5b50ux4f53ux7cfb}}
+
+\begin{itemize}
+\tightlist
+\item
+  玻色子：
+  $$\begin{aligned}
+    &\Psi_{n_1\cdots n_N}^S(q_1,\cdots,q_N) \\
+    &=\sqrt{\frac{\prod_in_i!}{N!}}\sum_PP[\psi_{k_1}(q_1)\cdots\psi_{k_N}(q_N)]
+  \end{aligned}$$
+\item
+  费米子：
+  $$\begin{aligned}
+    &\Psi_{k_1\cdots k_N}^A(q_1,\cdots,q_N) \\
+    &=\frac{1}{\sqrt{N!}}\left|\begin{matrix}
+    \psi_{k_1}(q_1) & \psi_{k_1}(q_2) & \cdots & \psi_{k_1}(q_N) \\
+    \psi_{k_2}(q_1) & \psi_{k_2}(q_2) & \cdots & \psi_{k_2}(q_N) \\
+    \vdots & \vdots & \ddots & \vdots \\
+    \psi_{k_N}(q_1) & \psi_{k_N}(q_2) & \cdots & \psi_{k_N}(q_N) \\
+  \end{matrix}\right|\end{aligned}$$
+\end{itemize}
+
+\hypertarget{ux6ce1ux5229ux4e0dux76f8ux5bb9ux539fux7406}{%
+\paragraph{ 5.4
+泡利不相容原理}\label{ux6ce1ux5229ux4e0dux76f8ux5bb9ux539fux7406}}
+
+  不可能有两个或更多费米子处于完全相同的量子状态。
+
+\hypertarget{ux4e94ux81eaux65cbux5355ux6001ux4e09ux91cdux6001ux53caux7ea0ux7f20ux6001}{%
+\subsection{五、自旋单态、三重态及纠缠态}\label{ux4e94ux81eaux65cbux5355ux6001ux4e09ux91cdux6001ux53caux7ea0ux7f20ux6001}}
+
+\hypertarget{ux5355ux4f53ux8fd1ux4f3cux4e0bux7684ux7535ux5b50ux81eaux65cbux51fdux6570}{%
+\subsubsection{1
+单体近似下的电子自旋函数}\label{ux5355ux4f53ux8fd1ux4f3cux4e0bux7684ux7535ux5b50ux81eaux65cbux51fdux6570}}
+
+\hypertarget{ux5355ux4f53ux8fd1ux4f3c}{%
+\paragraph{ 1.1 单体近似}\label{ux5355ux4f53ux8fd1ux4f3c}}
+
+\begin{center}
+\(\chi(s_{1z},s_{2z})=\chi_{m_{s1}}(s_{1z})\chi_{m_{s2}}(s_{2z})\)
+\end{center}
+  其中\(m_{s1},m_{s2}=\pm1/2\)
+
+\hypertarget{ux5bf9ux79f0ux4e0eux53cdux5bf9ux79f0ux81eaux65cbux51fdux6570}{%
+\paragraph{ 1.2
+对称与反对称自旋函数}\label{ux5bf9ux79f0ux4e0eux53cdux5bf9ux79f0ux81eaux65cbux51fdux6570}}
+
+\begin{center}
+\(\begin{cases}
+    \chi_S^{(1)}=\chi_{1/2}(s_{1z})\chi_{1/2}(s_{2z}) \\
+    \chi_S^{(2)}=\chi_{-1/2}(s_{1z})\chi_{-1/2}(s_{2z}) \\
+    \chi_S^{(3)}=\frac{1}{\sqrt{2}}[\chi_{1/2}(s_{1z})\chi_{-1/2}(s_{2z})-\chi_{-1/2}(s_{1z})\chi_{1/2}(s_{2z})] \\
+    \chi_A=\frac{1}{\sqrt{2}}[\chi_{1/2}(s_{1z})\chi_{-1/2}(s_{2z})+\chi_{-1/2}(s_{1z})\chi_{1/2}(s_{2z})] \\
+\end{cases}\)
+\end{center}
+
+\hypertarget{ux6027ux8d28}{%
+\paragraph{ 1.3 性质}\label{ux6027ux8d28}}
+
+\begin{itemize}
+\tightlist
+\item
+  \(\chi_S^{(1)},\chi_S^{(2)},\chi_S^{(3)},\chi_A\)组成正交归一系；
+\item
+  \(\chi_S^{(1)},\chi_S^{(2)},\chi_S^{(3)},\chi_A\)是\(\hat{S}^2,\hat{S}_z\)的本征态，可作为耦合表象\(\{\hat{S}_1^2,\hat{S}_2^2,\hat{S}^2,\hat{S}_z\}\)的基底。
+\end{itemize}
+
+\hypertarget{ux4e09ux91cdux6001ux548cux5355ux6001}{%
+\subsubsection{2
+三重态和单态}\label{ux4e09ux91cdux6001ux548cux5355ux6001}}
+
+\begin{itemize}
+\tightlist
+\item
+  自旋三重态：两电子自旋相互平行的态是三重简并的；
+\item
+  自旋单态：两电子自旋相互反平行的态是单一的。
+\item
+  本征值：
+\end{itemize}
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}	{|c|c|c|}
+    \hline
+    \textbf{本征态} & \textbf{$\hat{S}^2$本征值}
+    & \textbf{$\hat{S}_z$本征值}  \\ 
+    \hline
+    $\chi_S^{(1)}$ & $2\hbar^2$ & $\hbar$ \\
+    \hline
+    $\chi_S^{(2)}$ & $2\hbar^2$ & $-\hbar$ \\
+    \hline
+    $\chi_S^{(3)}$ & $2\hbar^2$ & $0$ \\
+    \hline
+    $\chi_A$ & $0$ & $0$ \\
+    \hline
+  \end{tabular}
+\end{table}
+
+\end{document}
