@@ -1,0 +1,219 @@
+\documentclass[UTF8,twocolumn]{ctexart}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\PassOptionsToPackage{hyphens}{url} % url is loaded by hyperref
+\usepackage[unicode=true]{hyperref}
+\hypersetup{
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+
+\date{}
+
+\begin{document}
+
+\section{第六章{ }微扰论及其他近似方法}\label{ux7b2cux516dux7ae0-ux5faeux6270ux8bbaux53caux5176ux4ed6ux8fd1ux4f3cux65b9ux6cd5}
+
+\subsection{一、定态微扰论I：非简并情形}\label{ux4e00ux5b9aux6001ux5faeux6270ux8bbaiux975eux7b80ux5e76ux60c5ux5f62}
+
+\subsubsection{1 微扰展开}\label{ux5faeux6270ux5c55ux5f00}
+
+\begin{itemize}
+\tightlist
+\item
+  哈密顿量： \[\hat{H}=\hat{H}_0+\hat{H}'\]
+\item
+  能级： \[E_n=E_n^{(0)}+E_n^{(1)}+E_n^{(2)}+\cdots\]
+\item
+  本征函数： \[\psi_n=\psi_n^{(0)}+\psi_n^{(1)}+\psi_n^{(2)}+\cdots\]
+\end{itemize}
+
+\subsubsection{2 零级公式}\label{ux96f6ux7ea7ux516cux5f0f}
+
+\begin{itemize}
+\tightlist
+\item
+  零级方程： \[\hat{H}_0\psi_n^{(0)}=E_n^{(0)}\psi_n^{(0)}\]
+\item
+  \(\hat{H}'\)在\(\{\psi_n^{(0)}\}\)表象中的矩阵元：
+  \[H_{mn}'=\int\psi_m^{(0)*}\hat{H}'\psi_n^{(0)}d\tau\]
+\item
+  微扰论适用条件： \[|\frac{H_{mn}'}{E_n^{(0)}-E_m^{(0)}}|\ll1\]
+\end{itemize}
+
+\subsubsection{3
+一级微扰公式}\label{ux4e00ux7ea7ux5faeux6270ux516cux5f0f}
+
+\begin{itemize}
+\tightlist
+\item
+  一级方程：
+  \[(\hat{H}_0-E_n^{(0)})\psi_n^{(1)}=-(\hat{H}'-E_n^{(1)})\psi_n^{(0)}\]
+\item
+  一级微扰能：
+  \[E_n^{(1)}=H_{nn}'=\int\psi_n^{(0)*}\hat{H}'\psi_n^{(0)}d\tau\]
+\item
+  一级微扰波函数：
+  \[\psi_n^{(1)}=\sum_{m\neq n}\frac{H_{mn}'}{E_n^{(0)}-E_m^{(0)}}\psi_m^{(0)}\]
+\end{itemize}
+
+\subsubsection{4
+二级微扰公式}\label{ux4e8cux7ea7ux5faeux6270ux516cux5f0f}
+
+\begin{itemize}
+\tightlist
+\item
+  二级方程：
+  \[(\hat{H}_0-E_n^{(0)})\psi_n^{(2)}=-(\hat{H}'-E_n^{(1)})\psi_n^{(1)}+E_n^{(2)}\psi_n^{(0)}\]
+\item
+  二级微扰能：
+  \[E_n^{(2)}=\sum_{m\neq n}\frac{|H_{mn}'|^2}{E_n^{(0)}-E_m^{(0)}}\]
+\end{itemize}
+
+\subsection{二、定态微扰论II：简并情形}\label{ux4e8cux5b9aux6001ux5faeux6270ux8bbaiiux7b80ux5e76ux60c5ux5f62}
+
+\subsubsection{1 简并情形}\label{ux7b80ux5e76ux60c5ux5f62}
+
+\paragraph{ 1.1 零级公式}\label{ux96f6ux7ea7ux516cux5f0f-1}
+
+\begin{itemize}
+\tightlist
+\item
+  零级方程： \[\hat{H}_0\psi_n^{(0)}=E_n^{(0)}\psi_n^{(0)}\]
+\item
+  本征函数(简并度为k)：
+  \[\hat{H}_0\varphi_{ni}^{(0)}=E_n^{(0)}\varphi_{ni}^{(0)},\,\,\,i=1,2,\cdots,k\]
+\item
+  \(\hat{H}'\)在\(\{\varphi_{ni}^{(0)}\}\)表象中的矩阵元：
+  \[H_{ji}'=\int\varphi_{nj}^{(0)*}\hat{H}'\varphi_{ni}^{(0)}d\tau\]
+\end{itemize}
+
+\paragraph{ 1.2
+一级微扰能与零级波函数}\label{ux4e00ux7ea7ux5faeux6270ux80fdux4e0eux96f6ux7ea7ux6ce2ux51fdux6570}
+
+\begin{itemize}
+\tightlist
+\item
+  假设零级波函数为：
+  \[\psi_n^{(0)}=\sum_{i=1}^kc_i^{(0)}\varphi_{ni}^{(0)}\]
+\item
+  久期方程： \[|H'-E_n^{(1)}I|=0\]
+  其中\(H'\)为\(\hat{H}'\)在\(\{\varphi_{ni}^{(0)}\}\)表象中的矩阵
+\item
+  一级微扰能： \[E_n=E_n^{(0)}+E_{ni}^{(1)},\,\,\,i=1,2,\cdots,k\]
+  其中\(E_{ni}^{(1)}\)为久期方程的特征值。若\(E_{ni}^{(1)}\)无重根，则简并解除；若\(E_{ni}^{(1)}\)有部分重根，则简并部分解除。
+\item
+  零级波函数： \[\psi_n^{(0)}=\sum_{i=1}^kc_i^{(0)}\varphi_{ni}^{(0)}\]
+  其中\(c_i^{(0)}\)为久期方程特征向量的各分量。
+\end{itemize}
+
+\subsection{三、经典效应}\label{ux4e09ux7ecfux5178ux6548ux5e94}
+
+\subsubsection{1 Stark效应}\label{starkux6548ux5e94}
+
+  原子或分子在外电场作用下能级和光谱发生分裂的现象
+
+\subsubsection{2 正常Zeeman效应}\label{ux6b63ux5e38zeemanux6548ux5e94}
+
+\begin{itemize}
+\tightlist
+\item
+  定义：原子或分子在外磁场作用下能级和光谱发生分裂的现象
+\item
+  哈密顿量：
+  \[\hat{H}=\hat{H}_0+\frac{\mu_BB_0}{\hbar}(\hat{L}_z+2\hat{S}_z)\]
+\item
+  能级： \[E_{nlm_lm_s}=E_{nl}^0+\mu_BB_0(m_l+2m_s)\]
+\end{itemize}
+
+\subsubsection{3
+自旋轨道耦合效应}\label{ux81eaux65cbux8f68ux9053ux8026ux5408ux6548ux5e94}
+
+\begin{itemize}
+\tightlist
+\item
+  定义：价电子的自旋磁矩受电子轨道运动的内磁场作用产生相互作用能的现象
+\item
+  哈密顿量修正项（Thomas项）：
+  \[\hat{H}_{LS}=\xi(r)\hat{\vec{L}}\cdot\hat{\vec{S}}\]
+\item
+  能级：
+  \[E_{nlj}\approx E_{nl}^0+\frac{\hbar^2}{2}(j(j+1)-l(l+1)-\frac{3}{4})\langle\xi\rangle_{nl}\]
+\end{itemize}
+
+\subsubsection{4 反常Zeeman效应}\label{ux53cdux5e38zeemanux6548ux5e94}
+
+\begin{itemize}
+\tightlist
+\item
+  情形：外磁场较弱时不能忽略\(\hat{H}_{LS}\)
+\item
+  哈密顿量：
+  \[\hat{H}=\hat{H}_0+\hat{H}_{LS}+\omega_L(\hat{J}_z+\hat{S}_z)\]
+\item
+  能级：
+  \[E_{nlm_lm_s}\approx E_{nlj}+\omega_Lm_j\hbar+\omega_L\langle nljm_j|\hat{S}_z|nljm_j\rangle\]
+\end{itemize}
+
+\subsection{四、量子跃迁}\label{ux56dbux91cfux5b50ux8dc3ux8fc1}
+
+\begin{itemize}
+\item
+  含时哈密顿量： \[\hat{H}(t)=\begin{cases}
+  \hat{H}_0 & t\leq0 \\
+  \hat{H}_0+\hat{H}'(t) & t>0\\
+  \end{cases}\]
+\item
+  跃迁概率：
+  \[P_{k'k}(t)=\frac{1}{\hbar^2}|\int_0^tH'_{k'k}(\tau)e^{i\omega_{k'k}\tau}d\tau|^2\]
+\end{itemize}
+
+  其中 \[H'_{k'k}(t)=\langle k'|\hat{H}'(t)|k\rangle\]
+\[\omega_{k'k}=\frac{E_{k'}-E_k}{\hbar}\]
+
+\end{document}
